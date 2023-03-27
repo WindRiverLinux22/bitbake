@@ -215,7 +215,7 @@ class CoreRecipeInfo(RecipeInfoCommon):
 
         # Collect files we may need for possible world-dep
         # calculations
-        if not self.not_world:
+        if not bb.utils.to_boolean(self.not_world):
             cachedata.possible_world.append(fn)
         #else:
         #    logger.debug2("EXCLUDE FROM WORLD: %s", fn)
